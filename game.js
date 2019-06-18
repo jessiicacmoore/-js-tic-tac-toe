@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
   const squares = document.querySelectorAll('.square');
   const modal = document.querySelector('.game-over-modal')
   const resetBtn = document.querySelector('.resetBtn');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   function squareTaken(sq) {
-    return sq.classList.contains('mark-x') || sq.classList.contains('mark-o') 
+    return sq.classList.contains('mark-x') || sq.classList.contains('mark-o')
   }
 
   squares.forEach(square => {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function(){
       };
     })
   })
-  
+
   resetBtn.addEventListener('click', () => {
     squares.forEach(square => {
       square.innerText = "";
