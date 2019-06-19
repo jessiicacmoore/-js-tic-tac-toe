@@ -8,15 +8,15 @@ document.addEventListener('DOMContentLoaded', function () {
   var winner = false;
 
   function isWinner() {
-    let r1 = [squares[0], squares[1], squares[2]]
-    let r2 = [squares[3], squares[4], squares[5]]
-    let r3 = [squares[6], squares[7], squares[8]]
-    let c1 = [squares[0], squares[3], squares[6]]
-    let c2 = [squares[1], squares[4], squares[7]]
-    let c3 = [squares[2], squares[5], squares[8]]
-    let d1 = [squares[0], squares[4], squares[8]]
-    let d2 = [squares[2], squares[4], squares[6]]
-    let winningCombos = [r1, r2, r3, c1, c2, c3, d1, d2]
+    let r1 = [squares[0], squares[1], squares[2]];
+    let r2 = [squares[3], squares[4], squares[5]];
+    let r3 = [squares[6], squares[7], squares[8]];
+    let c1 = [squares[0], squares[3], squares[6]];
+    let c2 = [squares[1], squares[4], squares[7]];
+    let c3 = [squares[2], squares[5], squares[8]];
+    let d1 = [squares[0], squares[4], squares[8]];
+    let d2 = [squares[2], squares[4], squares[6]];
+    let winningCombos = [r1, r2, r3, c1, c2, c3, d1, d2];
 
     winningCombos.forEach(combo => {
       let tally = 0;
