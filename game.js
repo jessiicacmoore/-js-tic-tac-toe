@@ -42,8 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function isGameOver() {
     let x = document.querySelectorAll('.mark-x').length;
     let o = document.querySelectorAll('.mark-o').length;
-
-    console.log
+    
     isWinner();
     if (winner === 'X' || winner === 'O') {
       winnerText.innerText = `${winner} has won the game!`
@@ -51,11 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
     } else if (x + o >= 9) {
       goModal.style.display = 'flex';
     }
-
-  }
-
-  function squareTaken(sq) {
-    return sq.classList.contains('mark-x') || sq.classList.contains('mark-o')
   }
 
   squares.forEach(square => {
