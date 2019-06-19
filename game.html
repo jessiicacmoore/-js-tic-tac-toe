@@ -9,39 +9,47 @@
 </head>
 <body>
   <div class="game-board">
-    <div class="square square-2">
-      <p class="mark "></p>
-    </div>
-    <div class="square square-1">
-      <p class="mark "></p>
-    </div>
-    <div class="square square-3">
+    <div class="square square-1 row-1">
       <p class="mark"></p>
     </div>
-    <div class="square square-4">
+    <div class="square square-2 row-1">
       <p class="mark"></p>
     </div>
-    <div class="square square-5">
+    <div class="square square-3 row-1">
       <p class="mark"></p>
     </div>
-    <div class="square square-6">
+    <div class="square square-4 row-2">
       <p class="mark"></p>
     </div>
-    <div class="square square-7">
+    <div class="square square-5 row-2">
       <p class="mark"></p>
     </div>
-    <div class="square square-8">
+    <div class="square square-6 row-2">
       <p class="mark"></p>
     </div>
-    <div class="square square-9">
+    <div class="square square-7 row-3">
+      <p class="mark"></p>
+    </div>
+    <div class="square square-8 row-3">
+      <p class="mark"></p>
+    </div>
+    <div class="square square-9 row-3">
       <p class="mark"></p>
     </div>
   </div>
 
-  <div class="game-over-modal">
-    <div class="game-over-content">
+  <div class="modal game-over-modal">
+    <div class="modal-content game-over-content">
       <h2>Game Over</h2>
       <h3>Please Reset The Game!</h3>
+      <button class="resetBtn">Reset!</button>
+    </div>
+  </div>
+
+  <div class="modal winner-modal">
+    <div class="modal-content winner-content">
+      <h2>Winner!</h2>
+      <h3 class="winnerText"></h3>
       <button class="resetBtn">Reset!</button>
     </div>
   </div>

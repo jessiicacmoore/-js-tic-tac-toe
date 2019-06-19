@@ -5,9 +5,9 @@
 }
 
 :root {
-  --bg: #227093;
-  --game-board: #84817a;
-  --square: #f7f1e3;
+  --bg: #425c65;
+  --game-board: #238189;
+  --square: #e8f3ee;
   --x: #ff5252;
   --o: #ffb142;
 }
@@ -20,7 +20,7 @@ body {
   font-family: sans-serif;
 }
 
-.game-over-modal {
+.modal {
   display: none;
   position: absolute;
   z-index: 999;
@@ -32,7 +32,7 @@ body {
   align-items: center;
 }
 
-.game-over-content {
+.modal-content {
   width: 50%;
   margin: 0 auto;
   padding: 3em;
@@ -42,11 +42,11 @@ body {
   text-align: center;
 }
 
-.game-over-content h2, h3 {
+.modal-content h2, h3 {
   color: var(--o);
 }
 
-.game-over-content h2 {
+.modal-content h2 {
   text-transform: uppercase;
 }
 

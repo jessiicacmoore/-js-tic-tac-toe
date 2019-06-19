@@ -1,15 +1,55 @@
 document.addEventListener('DOMContentLoaded', function () {
   const squares = document.querySelectorAll('.square');
-  const modal = document.querySelector('.game-over-modal')
-  const resetBtn = document.querySelector('.resetBtn');
+  const goModal = document.querySelector('.game-over-modal');
+  const winnerModal = document.querySelector('.winner-modal');
+  const winnerText = document.querySelector('.winnerText');
+  const resetBtns = document.querySelectorAll('.resetBtn');
   var mark = 'X';
+  var winner;
+
+  function isWinner() {
+    let r1 = [squares[0], squares[1], squares[2]]
+    let r2 = [squares[3], squares[4], squares[5]]
+    let r3 = [squares[6], squares[7], squares[8]]
+    let c1 = [squares[0], squares[3], squares[6]]
+    let c2 = [squares[1], squares[4], squares[7]]
+    let c3 = [squares[2], squares[5], squares[8]]
+    let d1 = [squares[0], squares[4], squares[8]]
+    let d2 = [squares[2], squares[4], squares[6]]
+    let winningCombos = [r1, r2, r3, c1, c2, c3, d1, d2]
+
+    winningCombos.forEach(combo => {
+      let tally = 0;
+      combo.forEach(square => {
+        if (square.innerText === 'X') {
+          tally += 1;
+        } else if (square.innerText === 'O') {
+          tally -= 1;
+        }
+      })
+
+      if (tally === 3) {
+        winner = 'X';
+        winnerDeclared = true;
+      } else if (tally === -3) {
+        winner = 'O';
+        winnerDeclared = true;
+      }
+    })
+  }
+
 
   function isGameOver() {
     let x = document.querySelectorAll('.mark-x').length;
     let o = document.querySelectorAll('.mark-o').length;
 
-    if (x + o >= 9) {
-      modal.style.display = 'flex';
+    console.log
+    isWinner();
+    if (winner === 'X' || winner === 'O') {
+      winnerText.innerText = `${winner} has won the game!`
+      winnerModal.style.display = 'flex';
+    } else if (x + o >= 9) {
+      goModal.style.display = 'flex';
     }
 
   }
@@ -39,12 +79,16 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 
-  resetBtn.addEventListener('click', () => {
-    squares.forEach(square => {
-      square.innerText = "";
-      square.classList.remove('mark-x');
-      square.classList.remove('mark-o');
-      modal.style.display = "none";
+  resetBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      squares.forEach(square => {
+        square.innerText = "";
+        square.classList.remove('mark-x');
+        square.classList.remove('mark-o');
+        goModal.style.display = "none";
+        winnerModal.style.display = "none";
+      })
     })
   })
+  
 });
