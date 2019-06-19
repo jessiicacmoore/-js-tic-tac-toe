@@ -5,11 +5,11 @@
 }
 
 :root {
-  --bg: #425c65;
-  --game-board: #238189;
+  --bg: #104253;
+  --game-board: #91a5ac;
   --square: #e8f3ee;
-  --x: #ff5252;
-  --o: #ffb142;
+  --x: #e66453;
+  --o: #cec238;
 }
 
 body {

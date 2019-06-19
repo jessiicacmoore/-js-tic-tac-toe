@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const winnerText = document.querySelector('.winnerText');
   const resetBtns = document.querySelectorAll('.resetBtn');
   var mark = 'X';
-  var winner;
+  var winner = false;
 
   function isWinner() {
     let r1 = [squares[0], squares[1], squares[2]]
@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function isGameOver() {
     let x = document.querySelectorAll('.mark-x').length;
     let o = document.querySelectorAll('.mark-o').length;
-    
+
+    console.log
     isWinner();
     if (winner === 'X' || winner === 'O') {
       winnerText.innerText = `${winner} has won the game!`
@@ -50,6 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
     } else if (x + o >= 9) {
       goModal.style.display = 'flex';
     }
+
+  }
+
+  function squareTaken(sq) {
+    return sq.classList.contains('mark-x') || sq.classList.contains('mark-o')
   }
 
   squares.forEach(square => {
@@ -76,13 +82,14 @@ document.addEventListener('DOMContentLoaded', function () {
   resetBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       squares.forEach(square => {
-        square.innerText = "";
+        square.firstElementChild.innerText = "";
         square.classList.remove('mark-x');
         square.classList.remove('mark-o');
         goModal.style.display = "none";
         winnerModal.style.display = "none";
+        winner = false;
       })
     })
   })
-  
+
 });
